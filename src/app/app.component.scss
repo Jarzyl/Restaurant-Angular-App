@@ -1,0 +1,44 @@
+// Importowanie czcionek, jeśli jest taka potrzeba
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// Zdefiniowanie zmiennych
+$primary-color: #ff0000;
+$secondary-color: #0000ff;
+$font-size-heading: 36px;
+$font-size-subheading: 28px;
+
+// Stylizacja
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+div {
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+  }
+
+h1 {
+  font-size: $font-size-heading;
+  color: $primary-color;
+}
+
+h2 {
+  font-size: $font-size-subheading;
+  color: $secondary-color;
+}
+
+h3 {
+  font-size: $font-size-subheading;
+  color: $secondary-color;
+}
+
+.router-outlet {
+  margin: 0 auto;
+}
