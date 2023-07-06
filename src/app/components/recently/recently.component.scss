@@ -1,0 +1,58 @@
+.recently-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .text-container {
+        
+      h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+  
+      h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      img {
+        width: 4%;
+    }
+    .order-button {
+        width: 160px;
+        background-color: #ff9966;
+        height: 50px;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+        justify-items: center;
+        align-items: center;
+      }
+    
+      .order-button .material-icons {
+        margin-left: 8px;
+        font-size: 24px;
+      }
+    }
+  
+    .image-container {
+      img {
+        width: 40%;
+      }
+    }
+  }
+  

@@ -1,0 +1,35 @@
+<nav>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../../assets/img/favicon.png" alt="" class="Logo-img">
+      <span>Sushi</span>
+    </div>
+    <div class="pages">
+      <ul class="menu-items" [ngClass]="{ 'open': isMenuOpen }">
+        <li class="menu-item">Home</li>
+        <li class="menu-item">Menu</li>
+        <li class="menu-item">Reservation</li>
+        <li class="menu-item">Contact</li>
+      </ul>
+    </div>
+    <div class="menu">
+      <div class="shoping-icon" (click)="toggleCart()">
+        <span class="material-icons">shopping_cart</span>
+        <div class="cart-items-count">{{ cartService.getCartItems().length }}</div>
+      </div>
+      <div class="menu-icon" (click)="toggleMenu()">
+        <span class="material-icons">menu</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="cart-overlay" [ngClass]="{ 'open': isCartOpen }">
+  <div class="cart">
+    <div class="close-icon" (click)="closeCart()">
+      <span class="material-icons">close</span>
+    </div>
+    <h2>Your Cart</h2>
+    <!-- Place your cart content here -->
+  </div>
+</div>

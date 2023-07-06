@@ -1,0 +1,15 @@
+<div class="popular-container">
+  <h1>The Best Food</h1>
+  <p>Popular Dishes</p>
+
+  <div class="cards-container">
+    <app-product-card [cartService]="cartService"
+      *ngFor="let product of popularProducts"
+      [id]="product.id"
+      [title]="product.title"
+      [subtitle]="product.subtitle"
+      [price]="product.price"
+      [imageSrc]="product.imageSrc"
+    ></app-product-card>
+  </div>
+</div>

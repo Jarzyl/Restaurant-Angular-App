@@ -1,0 +1,57 @@
+@import "../../app.component.scss";
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  text-align: center;
+  padding-top: 50px;
+  justify-items: center;
+  align-items: center;
+  max-width: 1260px;
+  margin: auto;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header {
+    h1 {
+      margin-bottom: 10px;
+    }
+    img {
+      width: 8%;
+    }
+  }
+
+  .image-container {
+    img {
+      width: 70%;
+      max-width: 100%;
+    }
+  }
+
+  .description {
+    width: 250px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+  }
+
+  .order-button {
+    width: 160px;
+    background-color: #ff9966;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    justify-items: center;
+    align-items: center;
+    color: white;
+    font-weight: bolder;
+  }
+}

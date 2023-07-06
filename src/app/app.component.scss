@@ -4,41 +4,48 @@
 // Zdefiniowanie zmiennych
 $primary-color: #ff0000;
 $secondary-color: #0000ff;
-$font-size-heading: 36px;
-$font-size-subheading: 28px;
+$font-size-heading: 34px;
+$font-size-paragraph: 25px;
+$background-color: #fff2e6;
+$heading-color: black;
+$paragraph-color: #996633;
 
 // Stylizacja
-body {
+* {
   font-family: 'Roboto', sans-serif;
   text-align: center;
+  background: $background-color;
+  box-sizing: border-box;
 }
 
-div {
-    position: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-}
+body {
+  margin: 0;
+  padding: 0;
+  width: 350px;
+  // max-width: 1280px;
+  margin: auto;
 
-h1, h2, h3 {
-    text-align: center;
+  @media (min-width: 768px) {
+    width: 100%;
   }
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
 
 h1 {
   font-size: $font-size-heading;
-  color: $primary-color;
+  $heading-color: black;
 }
 
-h2 {
-  font-size: $font-size-subheading;
-  color: $secondary-color;
+p {
+  font-size: $font-size-paragraph;
+  color: $paragraph-color;
 }
 
-h3 {
-  font-size: $font-size-subheading;
-  color: $secondary-color;
-}
-
-.router-outlet {
-  margin: 0 auto;
+@media (min-width: 768px) {
+  $font-size-heading: 45px;
+  $font-size-paragraph: 18px;
 }
