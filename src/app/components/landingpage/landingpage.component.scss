@@ -5,7 +5,7 @@
   grid-template-columns: 1fr;
   gap: 20px;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 40px;
   justify-items: center;
   align-items: center;
   max-width: 1260px;
@@ -23,7 +23,7 @@
       margin-bottom: 10px;
     }
     img {
-      width: 8%;
+      width: 9%;
     }
   }
 
@@ -35,11 +35,12 @@
   }
 
   .description {
-    width: 250px;
+    width: 260px;
     display: flex;
     justify-items: center;
     align-items: center;
     margin: auto;
+    margin-top: 0px;
   }
 
   .order-button {
@@ -47,11 +48,12 @@
     background-color: #ff9966;
     height: 50px;
     border: none;
-    border-radius: 10px;
+    border-radius: 30px;
     font-size: 18px;
     justify-items: center;
     align-items: center;
-    color: white;
+    color: whitesmoke;
     font-weight: bolder;
+    margin-top: 30px;
   }
 }

@@ -8,14 +8,13 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./product-card.component.scss']
 })
 
-
-
 export class ProductCardComponent {
   @Input() id!: number;
   @Input() imageSrc!: string;
   @Input() title!: string;
   @Input() subtitle!: string;
   @Input() price!: string;
+  @Input() quantity!: number;
   @Input() cartService: CartService = {} as CartService;
 
   addToCart(): void {
@@ -24,8 +23,10 @@ export class ProductCardComponent {
       title: this.title,
       subtitle: this.subtitle,
       price: this.price,
-      imageSrc: this.imageSrc
+      imageSrc: this.imageSrc,
+      quantity: this.quantity
     };
+    console.log('Adding to cart:', product);
     this.cartService.addToCart(product);
   }
 }

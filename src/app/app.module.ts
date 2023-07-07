@@ -10,6 +10,10 @@ import { NewsletterComponent } from './components/newsletter/newsletter.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { PopularModule } from './components/popular/popular.module';
 import { CartService } from './services/cart.service';
+import { CartComponent } from './cart/cart.component';
+import { MenuComponent } from './pages/menu/menu.component';
+import { MainComponent } from './components/Home/main/main.component';
+
 
 @NgModule({
   declarations: [
@@ -20,11 +24,15 @@ import { CartService } from './services/cart.service';
     RecentlyComponent,
     NewsletterComponent,
     FooterComponent,
+    CartComponent,
+    MenuComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PopularModule
+    PopularModule,
+    
   ],
   providers: [CartService],
   bootstrap: [AppComponent]

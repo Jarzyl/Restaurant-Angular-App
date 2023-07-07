@@ -1,51 +1,15 @@
 // Importowanie czcionek, jeśli jest taka potrzeba
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Lora:wght@600&family=Poppins:wght@300&display=swap');
 
 // Zdefiniowanie zmiennych
 $primary-color: #ff0000;
 $secondary-color: #0000ff;
 $font-size-heading: 34px;
-$font-size-paragraph: 25px;
+$font-size-paragraph: 15px;
 $background-color: #fff2e6;
 $heading-color: black;
 $paragraph-color: #996633;
-
-// Stylizacja
-* {
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
-  background: $background-color;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  width: 350px;
-  // max-width: 1280px;
-  margin: auto;
-
-  @media (min-width: 768px) {
-    width: 100%;
-  }
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
-}
-
-h1 {
-  font-size: $font-size-heading;
-  $heading-color: black;
-}
-
-p {
-  font-size: $font-size-paragraph;
-  color: $paragraph-color;
-}
-
-@media (min-width: 768px) {
-  $font-size-heading: 45px;
-  $font-size-paragraph: 18px;
-}
+$span-color: #ffb366;
+$body-font: 'Poppins', sans-serif;
+$title-font: 'Lora', serif;
+$subtitle-font: 'Dancing Script', cursive;

@@ -1,0 +1,25 @@
+<div class="shoping-icon" (click)="toggleCart()">
+  <span class="material-icons">shopping_cart</span>
+  <div class="cart-items-count">{{ cartService.getCartItems().length }}</div>
+</div>
+
+<div class="cart-overlay" [ngClass]="{ open: isCartOpen }">
+  <div class="cart">
+    <div class="close-icon" (click)="closeCart()">
+      <span class="material-icons">close</span>
+    </div>
+    <p>Your Cart: {{ cartService.getCartItems().length }}</p>
+    <div *ngFor="let item of cartItems" class="cart-item">
+        <img [src]="item.imageSrc" alt="Product Image">
+        <p class="title">{{ item.title }}</p>
+        <p class="price">{{ item.price }}</p>
+        <!-- <div class="quantity">
+          <button (click)="addLess(item)">-</button>
+          <span>{{ item.quantity }}</span>
+
+          <button (click)="addMore(item)">+</button>
+        </div> -->
+      </div>
+      
+  </div>
+</div>
