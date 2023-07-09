@@ -4,8 +4,9 @@ body {
     margin: 0;
     padding: 0;
     width: 380px;
-    
+    background: $background-color;
     margin: auto;
+    text-align: center;
   
     @media (min-width: 768px) {
       width: 100%;
@@ -16,22 +17,23 @@ body {
 
   // Stylizacja
 * {
-  text-align: center;
-  background: $background-color;
   box-sizing: border-box;
 
   p {
     font-family: $body-font;
-    font-size: $font-size-paragraph;
+    font-size: $body-font-size-sm-md;
   color: $paragraph-color;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h2, h3, h4, h5, h6 {
     font-family: $title-font;
+    font-size: $title-font-size-sm-md;
   }
 
   span {
-    font-family: $subtitle-font;
+    font-family: $span-font;
+    font-size: $span-font-size-sm-md;
+    color: $span-color;
   }
 
 }
@@ -42,10 +44,7 @@ html, body {
 }
 
 h1 {
-  font-size: $font-size-heading;
+  font-size: $font-size-heading-sm-md;
   $heading-color: black;
-}
-
-.subtitle {
-  font-size: 25px;
+  font-family: $title-font;
 }

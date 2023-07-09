@@ -1,13 +1,16 @@
+@import "../../app.component.scss";
+
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 10px;
     border-radius: 10px;
-    background-color: #df742d;
     width: 260px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   
     img {
       width: 80%;
@@ -17,27 +20,43 @@
       margin-bottom: 10px;
     }
   
-    h2 {
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-  
-    h3 {
-      font-size: 14px;
-      color: gray;
-      margin-bottom: 10px;
-    }
-  
-    p {
-      font-size: 16px;
+    p.title {
+      font-size: 22px;
       font-weight: bold;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
+      color: $heading-color;
     }
-  
+    
+    p.subtitle {
+      font-size: 15px;
+      margin: 0;
+    }
+    
+    p.price {
+      font-size: 16px;
+      color: #e68a00;
+      font-weight: bold;
+    }
+
+    .cart-icon {
+      background: #e68a00;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 18px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
     .material-icons {
-      font-size: 20px;
-      color: green;
+      /* Styl ikony koszyka */
+      margin: 0;
+      font-size: 23px;
+      color: white;
       cursor: pointer;
     }
-  }
+  } 
   

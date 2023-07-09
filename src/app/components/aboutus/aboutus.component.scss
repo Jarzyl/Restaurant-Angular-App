@@ -1,56 +1,66 @@
 @import "../../app.component.scss";
 
 .about-us-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 1260px;
-    padding-top: 60px;
-    justify-items: center;
-      align-items: center;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1260px;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 400px;
+  }
+
+  .text-container-about {
+    padding-bottom: 20px;
+    span {
+      color: $span-color;
+    }
+    h2 {
+      margin-top: 8px;
+    }
+    p {
+      width: 345px;
       margin: 0;
-  
+    }
+    img {
+      width: 8%;
+    }
+
     @media (min-width: 768px) {
-      display: flex;
-      flex-direction: row-reverse;
-      padding-top: 100px;
-    }
-  
-    .text-container {
-      padding-bottom: 20px;
-      span {
-        color: $span-color;
-        font-size: 22px;
-      }
-      h2 {
-        margin-top: 8px;
-      }
-      p {
-        width: 345px;
-        margin: 0;
-      }
-      img {
-        width: 8%;
-      }
-  
-      @media (min-width: 768px) {
-        text-align: left;
-        flex: 1;
-      }
-    }
-  
-    .image-container {
-      display: flex;
-      justify-content: center;
-  
-      @media (min-width: 768px) {
-        justify-content: flex-start;
-        flex: 1;
-      }
-  
-      img {
-        max-width: 70%;
-      }
+      text-align: left;
+      flex: 1;
     }
   }
-  
+
+  .image-container-about {
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 768px) {
+      flex: 1;
+    }
+
+    img {
+      max-width: 70%;
+    }
+  }
+  .right-leaf {
+    position: absolute;
+    top: 240px;
+    right: -20px;
+    transform: rotate(-15deg);
+    opacity: 0.2;
+    width: 100px;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      top: 100px;
+    }
+  }
+}

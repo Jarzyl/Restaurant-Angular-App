@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
+import { ScrollRevealService } from 'src/app/services/scrollreveal.service';
 
 @Component({
   selector: 'app-product-card',
@@ -28,5 +29,17 @@ export class ProductCardComponent {
     };
     console.log('Adding to cart:', product);
     this.cartService.addToCart(product);
+  }
+
+  constructor(private scrollRevealService: ScrollRevealService) {}
+
+  ngOnInit() {
+    this.scrollRevealService.reveal('.card', {
+      duration: 2500,
+      origin: 'top',
+      distance: '60px',
+      delay: 400,
+      interval: 500,
+    });
   }
 }

@@ -13,7 +13,7 @@ import { CartService } from './services/cart.service';
 import { CartComponent } from './cart/cart.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MainComponent } from './components/Home/main/main.component';
-
+import { ScrollRevealService } from './services/scrollreveal.service';
 
 @NgModule({
   declarations: [
@@ -28,13 +28,8 @@ import { MainComponent } from './components/Home/main/main.component';
     MenuComponent,
     MainComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    PopularModule,
-    
-  ],
-  providers: [CartService],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, PopularModule],
+  providers: [CartService, ScrollRevealService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
