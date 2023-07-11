@@ -1,0 +1,121 @@
+@import "../../../app.component.scss";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $background-color;
+  padding: 16px;
+  min-width: 370px;
+  margin: 0;
+  top: 0;
+  z-index: 50;
+  position: fixed;
+
+  span {
+    color: $heading-color;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    max-width: 1260px;
+  }
+}
+
+.pages {
+  .menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .menu-item {
+      a {
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover,
+        &.active {
+          color: #ffb366;
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000000;
+}
+.Logo-img {
+  margin-right: 8px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-items {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  margin-left: 16px;
+  font-size: 16px;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .menu {
+    position: relative;
+  }
+
+  .menu-icon {
+    display: block;
+    margin-left: 16px;
+    font-size: 24px;
+    color: #000000;
+  }
+
+  .menu-items {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 16px;
+  }
+
+  .menu-items.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-item {
+    margin: 8px 0;
+  }
+}

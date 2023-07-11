@@ -1,25 +1,33 @@
 <div class="shoping-icon" (click)="toggleCart()">
   <span class="material-icons">shopping_cart</span>
-  <div class="cart-items-count">{{ cartService.getCartItems().length }}</div>
+  <div *ngIf="cart.items.length" class="cart-items-count">
+    {{ itemsQuantity }}
+  </div>
 </div>
-
-<div class="cart-overlay" [ngClass]="{ open: isCartOpen }">
+<div
+  *ngIf="cart.items.length"
+  class="cart-overlay"
+  [ngClass]="{ open: isCartOpen }"
+>
   <div class="cart">
     <div class="close-icon" (click)="closeCart()">
       <span class="material-icons">close</span>
     </div>
-    <p>Your Cart: {{ cartService.getCartItems().length }}</p>
-    <div *ngFor="let item of cartItems" class="cart-item">
-        <img [src]="item.imageSrc" alt="Product Image">
-        <p class="title">{{ item.title }}</p>
-        <p class="price">{{ item.price }}</p>
-        <!-- <div class="quantity">
-          <button (click)="addLess(item)">-</button>
-          <span>{{ item.quantity }}</span>
-
-          <button (click)="addMore(item)">+</button>
-        </div> -->
-      </div>
-      
+    <p>Your Cart: {{ itemsQuantity }}</p>
+    <div *ngFor="let item of cart.items" class="cart-item">
+      <img [src]="item.imageSrc" alt="Product Image" />
+      <p class="title">{{ item.title }} x {{ item.quantity }}</p>
+      <p class="price">{{ item.price | currency }}</p>
+    </div>
+    <div class="go-to-cart">
+      <a routerLink="/cart">View Cart</a>
+    </div>
+    <div class="total">{{ getTotal(cart.items) | currency }}</div>
+    <div class="clear-cart">
+      Clear Cart
+      <button (click)="onClearCart()">
+        <span class="material-icons">delete</span>
+      </button>
+    </div>
   </div>
 </div>

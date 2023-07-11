@@ -109,4 +109,23 @@
   justify-content: center;
   align-items: center;
   font-size: 12px;
+  font-weight: bold;
+}
+
+.go-to-cart {
+  a {
+    text-decoration: none;
+    color: green;
+  }
+}
+
+.total {
+  margin-top: 10px;
+}
+
+.clear-cart {
+  span {
+    color: green;
+    margin-top: 10px;
+  }
 }

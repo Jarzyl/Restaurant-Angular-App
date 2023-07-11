@@ -1,4 +1,6 @@
 @import './app/app.component.scss';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
 
 body {
     margin: 0;
@@ -48,3 +50,4 @@ h1 {
   $heading-color: black;
   font-family: $title-font;
 }
+

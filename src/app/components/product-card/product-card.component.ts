@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Product } from 'src/app/models/product';
-import { CartService } from 'src/app/services/cart.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ProductTwo } from 'src/app/models/product.model';
+import { ShopService } from 'src/app/services/Shop.service';
 import { ScrollRevealService } from 'src/app/services/scrollreveal.service';
 
 @Component({
@@ -14,32 +14,47 @@ export class ProductCardComponent {
   @Input() imageSrc!: string;
   @Input() title!: string;
   @Input() subtitle!: string;
-  @Input() price!: string;
+  @Input() price!: number;
   @Input() quantity!: number;
-  @Input() cartService: CartService = {} as CartService;
+  @Input() shopService: ShopService = {} as ShopService;
 
-  addToCart(): void {
-    const product: Product = {
-      id: this.id,
-      title: this.title,
-      subtitle: this.subtitle,
-      price: this.price,
-      imageSrc: this.imageSrc,
-      quantity: this.quantity
-    };
-    console.log('Adding to cart:', product);
-    this.cartService.addToCart(product);
+  // onAddToCart(product: ProductTwo): void {
+  //   this.shopService.addToCart({
+  //     price: product.price,
+  //     quantity: 1,
+  //     id: product.id,
+  //     title: product.title,
+  //     subtitle: product.subtitle,
+  //     imageSrc: product.imageSrc,
+  //   });
+  // }
+
+  product: ProductTwo | undefined = {
+    
+    id: 1,
+    title: 'Snickers',
+    price: 10,
+    subtitle: "Baaton",
+    category: 'sushi',
+    imageSrc: '../../assets/img/popular-sushi-rolls.png'
   }
 
-  constructor(private scrollRevealService: ScrollRevealService) {}
+  @Output() addToCart = new EventEmitter();
 
-  ngOnInit() {
-    this.scrollRevealService.reveal('.card', {
-      duration: 2500,
-      origin: 'top',
-      distance: '60px',
-      delay: 400,
-      interval: 500,
-    });
+  onAddToCart(): void {
+    this.addToCart.emit(this.product);
   }
+
+  // constructor(private scrollRevealService: ScrollRevealService) {}
+
+  // ngOnInit() {
+  //   this.scrollRevealService.reveal('.card', {
+  //     duration: 2500,
+  //     origin: 'top',
+  //     distance: '60px',
+  //     delay: 400,
+  //     interval: 500,
+  //   });
+  // }
+
 }

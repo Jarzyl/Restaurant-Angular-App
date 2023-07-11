@@ -1,2 +1,47 @@
+<div class="welcome">
+  <p class="siemanko">Your Menu</p>
 
-    <p>HOLA AMIGO</p>
+  <div>
+    <app-products-header
+      (showCategory)="onShowCategory($event)"
+    ></app-products-header>
+  </div>
+  <div>
+    <div class="cards-container">
+      <app-product-cart
+        (addToCart)="onAddToCart($event)"
+        [shopService]="shopService"
+        *ngFor="let product of popularProducts"
+        [id]="product.id"
+        [title]="product.title"
+        [subtitle]="product.subtitle"
+        [price]="product.price"
+        [imageSrc]="product.imageSrc"
+        [category]="product.category"
+      ></app-product-cart>
+    </div>
+  </div>
+</div>
+
+<!--  old -->
+
+<!-- <app-product-cart 
+(addToCart)="onAddToCart($event)" 
+  [shopService]="shopService"
+  *ngFor="let product of popularProducts"
+  [id]="product.id"
+  [title]="product.title"
+  [subtitle]="product.subtitle"
+  [price]="product.price"
+  [imageSrc]="product.imageSrc"
+  [category]="product.category"
+></app-product-cart> -->
+
+<!-- New -->
+
+<!-- <app-product-cart 
+(addToCart)="onAddToCart($event)" 
+  [shopService]="shopService"
+  *ngFor="let product of products"
+  [product]="product"
+></app-product-cart> -->

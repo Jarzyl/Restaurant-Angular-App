@@ -1,0 +1,27 @@
+<!-- <div> -->
+    <!-- [sorting]="sortBy" -->
+<!-- <button >
+    Sort by {{sort}} </button>
+
+</div> -->
+<!-- #sortBy="div" -->
+<!-- <div >
+    <button (click)="onSortUpdated('desc')"  >desc</button>
+    <button (click)="onSortUpdated('asc')" >asc</button>
+</div> -->
+<!-- <div>
+    <button>Show {{ itemsShowCount }}</button>
+</div> -->
+
+<div *ngIf="categories"></div>
+<p> CATEGORIES</p>
+<div class="category-container">
+    <div *ngFor="let category of categories" class="category-item">
+      <button (click)="onShowCategory(category)">{{ category }}</button>
+      <!-- <p>{{ category }}</p> -->
+    </div>
+  
+
+
+
+     

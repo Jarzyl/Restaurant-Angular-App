@@ -1,0 +1,132 @@
+@import "../../../app.component.scss";
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  text-align: center;
+  padding-top: 100px;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100px;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    margin: 0;
+    gap: 0;
+    padding-bottom: 20px;
+    height: 400px;
+  }
+
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    margin: 0;
+    gap: 0;
+    padding-bottom: 0px;
+    padding-top: 100px;
+    height: 600px;
+
+    h1 {
+      font-size: $font-size-heading-lg;
+    }
+    p {
+      font-size: 22px;
+    }
+  }
+  .header {
+    h1 {
+      margin-bottom: 10px;
+    }
+    img {
+      width: 9%;
+    }
+  }
+
+  .image-container {
+    img {
+      width: 70%;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      img {
+        width: 300px;
+      }
+    }
+    @media (min-width: 1024px) {
+      img {
+        width: 550px;
+      }
+    }
+  }
+
+  .description {
+    width: 260px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 0px;
+
+    @media (min-width: 1024px) {
+      width: 400px;
+    }
+  }
+
+  .order-button {
+    width: 160px;
+    background-color: #ff9966;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    justify-items: center;
+    align-items: center;
+    font-weight: bolder;
+    margin-top: 20px;
+
+    a {
+      text-decoration: none;
+      color: whitesmoke;
+    }
+  }
+
+  .left-leaf {
+    position: absolute;
+    top: 120px;
+    left: -19px;
+    transform: rotate(90deg);
+    opacity: 0.2;
+
+    @media (min-width: 1024px) {
+      top: 60px;
+      width: 120px;
+    }
+  }
+
+  .right-leaf {
+    position: absolute;
+    bottom: 100px;
+    right: -30px;
+    transform: rotate(-15deg);
+    opacity: 0.2;
+    width: 100px;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      bottom: 10px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 150px;
+    }
+  }
+}
