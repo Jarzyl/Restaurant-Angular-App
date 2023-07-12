@@ -6,16 +6,31 @@
     </div>
     <div class="pages">
       <ul class="menu-items" [ngClass]="{ open: isMenuOpen }">
-        <li class="menu-item">
+        <img
+          src="../../assets/img/leaf-branch-4.png"
+          alt="leaf"
+          width="80"
+          class="left-leaf"
+        />
+        <img
+          src="../../assets/img/leaf-branch-3.png"
+          alt="leaf"
+          width="80"
+          class="right-leaf"
+        />
+        <div class="close-icon" (click)="toggleMenu()">
+          <span class="material-icons">close</span>
+        </div>
+        <li class="menu-item" (click)="toggleMenu()">
           <a routerLink="/">Home</a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item" (click)="toggleMenu()">
           <a routerLink="/menu">Menu</a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item" (click)="toggleMenu()">
           <a routerLink="/Reservation">Reservation</a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item" (click)="toggleMenu()">
           <a routerLink="/Contact">Contact</a>
         </li>
       </ul>

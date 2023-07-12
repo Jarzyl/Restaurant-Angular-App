@@ -10,20 +10,19 @@ import { ShopService } from 'src/app/services/Shop.service';
 export class ProductCartComponent {
 
   //  Old
-  product: ProductTwo | undefined = {
+  // product: ProductTwo | undefined = {
     
-    id: 1,
-    title: 'Snickers',
-    price: 10,
-    subtitle: "Baaton",
-    category: 'sushi',
-    imageSrc: '../../assets/img/popular-sushi-rolls.png'
-  }
+  //   id: 1,
+  //   title: 'Snickers',
+  //   price: 10,
+  //   subtitle: "Baaton",
+  //   category: 'sushi',
+  //   imageSrc: '../../assets/img/popular-sushi-rolls.png'
+  // }
 
   // New
 
-  // @Input () product: ProductTwo | undefined;
-
+  @Input () product: ProductTwo | undefined;
   @Output() addToCart = new EventEmitter();
   @Input() shopService: ShopService = {} as ShopService;
 
@@ -34,8 +33,6 @@ export class ProductCartComponent {
   @Input() price!: number;
   @Input() quantity!: number;
   @Input() category!: string;
-  // @Input() cartService: CartService = {} as CartService;
-
 
   onAddToCart(): void {
     this.addToCart.emit(this.product);

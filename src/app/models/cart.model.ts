@@ -10,4 +10,5 @@ export interface CartItem {
   title: string;
   subtitle: string;
   imageSrc: string;
+  category: string;
 }

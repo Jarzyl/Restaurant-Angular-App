@@ -1,6 +1,12 @@
-.welcome {
-    padding-top: 100px;
-    
+@import '../../app.component.scss';
+
+.menu-container {
+  padding-top: 100px;
+
+  p {
+    font-size: $font-size-heading-sm-md;
+    font-family: $title-font;
+  }
 }
 
 .cards-container {
@@ -8,15 +14,16 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
   padding-top: 50px;
-  max-width: 1000px;
+  max-width: 600px;
   justify-content: center;
   margin: 0 auto;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
+    max-width: 1150px;
   }
 }

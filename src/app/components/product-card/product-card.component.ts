@@ -16,28 +16,20 @@ export class ProductCardComponent {
   @Input() subtitle!: string;
   @Input() price!: number;
   @Input() quantity!: number;
+  @Input() category!: string;
   @Input() shopService: ShopService = {} as ShopService;
 
-  // onAddToCart(product: ProductTwo): void {
-  //   this.shopService.addToCart({
-  //     price: product.price,
-  //     quantity: 1,
-  //     id: product.id,
-  //     title: product.title,
-  //     subtitle: product.subtitle,
-  //     imageSrc: product.imageSrc,
-  //   });
-  // }
-
-  product: ProductTwo | undefined = {
+  // product: ProductTwo | undefined = {
     
-    id: 1,
-    title: 'Snickers',
-    price: 10,
-    subtitle: "Baaton",
-    category: 'sushi',
-    imageSrc: '../../assets/img/popular-sushi-rolls.png'
-  }
+  //   id: 1,
+  //   title: 'Snickers',
+  //   price: 10,
+  //   subtitle: "Baaton",
+  //   category: 'sushi',
+  //   imageSrc: '../../assets/img/popular-sushi-rolls.png'
+  // }
+  @Input () product: ProductTwo | undefined;
+
 
   @Output() addToCart = new EventEmitter();
 

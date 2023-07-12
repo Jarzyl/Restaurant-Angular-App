@@ -1,9 +1,11 @@
 <div class="card">
   <img [src]="imageSrc" alt="Food Image" />
-  <p class="title">{{ title }}</p>
-  <p class="subtitle">{{ subtitle }}</p>
-  <p class="price">{{ price | currency }}</p>
-  <div class="cart-icon">
-    <span class="material-icons" (click)="onAddToCart()">shopping_cart</span>
+  <div class="content">
+    <p class="title">{{ title }}</p>
+    <p class="subtitle">{{ subtitle }}</p>
+    <p class="price">{{ price | currency }}</p>
+    <div class="cart-icon">
+      <span class="material-icons" (click)="onAddToCart()">shopping_cart</span>
+    </div>
   </div>
 </div>

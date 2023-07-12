@@ -9,7 +9,7 @@ const STORE_BASE_URL = 'https://fakestoreapi.com';
   providedIn: 'root',
 })
 export class StoreService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   // Store api test
 
@@ -30,4 +30,10 @@ export class StoreService {
   //     `${STORE_BASE_URL}/products/categories`
   //   );
   // }
+
+  private menuUrl = 'assets/menu.json';
+
+  getMenuItems(): Observable<ProductTwo[]> {
+    return this.http.get<ProductTwo[]>(this.menuUrl);
+  }
 }

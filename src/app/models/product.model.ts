@@ -1,4 +1,3 @@
-
 export interface ProductTwo {
   quantity?: number;
   id: number;
@@ -6,5 +5,5 @@ export interface ProductTwo {
   price: number;
   subtitle: string;
   imageSrc: string;
-  category?: string;
+  category: string;
 }

@@ -13,21 +13,28 @@
     <div class="close-icon" (click)="closeCart()">
       <span class="material-icons">close</span>
     </div>
-    <p>Your Cart: {{ itemsQuantity }}</p>
+    <p class="your-cart">Your Cart: {{ itemsQuantity }}</p>
     <div *ngFor="let item of cart.items" class="cart-item">
       <img [src]="item.imageSrc" alt="Product Image" />
-      <p class="title">{{ item.title }} x {{ item.quantity }}</p>
+      <p class="title">{{ item.title }}<span><br>x{{ item.quantity }}</span></p>
       <p class="price">{{ item.price | currency }}</p>
     </div>
-    <div class="go-to-cart">
-      <a routerLink="/cart">View Cart</a>
-    </div>
-    <div class="total">{{ getTotal(cart.items) | currency }}</div>
-    <div class="clear-cart">
-      Clear Cart
-      <button (click)="onClearCart()">
-        <span class="material-icons">delete</span>
+    <hr class="line">
+    <p class="total">Total: {{ getTotal(cart.items) | currency }}</p>
+    <hr class="line">
+    <div *ngIf="cart.items.length" class="buttons">
+    <button class="cart-button" (click)="closeCart()">
+      <a routerLink="/cart">Go to Cart</a>
+    </button>
+      <button (click)="onClearCart()" class="cart-button">
+        Clear Cart
       </button>
-    </div>
   </div>
+  <div *ngIf="!cart.items.length">
+    <p>Your cart is empty.</p>
+    <button class="cart-button" (click)="closeCart()">
+      <a routerLink="/menu"> Start Shopping</a>
+    </button>
+  </div>
+</div>
 </div>

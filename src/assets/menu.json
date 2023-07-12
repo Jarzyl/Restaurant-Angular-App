@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Nigiri Sushi",
+    "subtitle": "Fish slice on rice",
+    "price": 10.99,
+    "imageSrc": "../../assets/Sushi/nigiri.jpg",
+    "category": "sushi"
+  },
+  {
+    "id": 2,
+    "title": "Maki Sushi",
+    "subtitle": "Rolls with fish, vegetables, and nori (seaweed)",
+    "price": 12.99,
+    "imageSrc": "../../assets/Sushi/maki.webp",
+    "category": "sushi"
+  },
+  {
+    "id": 3,
+    "title": "Sashimi",
+    "subtitle": "Fresh fish slices without rice",
+    "price": 12.99,
+    "imageSrc": "../../assets/Sushi/sashimi.jpg",
+    "category": "sushi"
+  },
+  {
+    "id": 4,
+    "title": "California Roll",
+    "subtitle": "Sushi roll with crab meat, cucumber, avocado, and roe",
+    "price": 12.99,
+    "imageSrc": "../../assets/Sushi/california.jpg",
+    "category": "sushi"
+  },
+  {
+    "id": 5,
+    "title": "Tempura",
+    "subtitle": "Crispy fried pieces of vegetables or seafood",
+    "price": 12.99,
+    "imageSrc": "../../assets/Sushi/tempura.jpg",
+    "category": "sushi"
+  },
+  {
+    "id": 6,
+    "title": "Uramaki",
+    "subtitle": "Inside-out sushi roll with rice outside, nori inside",
+    "price": 12.99,
+    "imageSrc": "../../assets/Sushi/uramaki.jpg",
+    "category": "sushi"
+  },
+  {
+    "id": 7,
+    "title": "Gunkan",
+    "subtitle": "Small seaweed rolls filled with fish, seafood, or roe",
+    "price": 12.99,
+    "imageSrc": "../../assets/Sushi/gunkan.jpg",
+    "category": "sushi"
+  },
+  {
+    "id": 8,
+    "title": "Futomaki",
+    "subtitle": "Thick sushi roll with various fillings wrapped in nori",
+    "price": 12.99,
+    "imageSrc": "../../assets/Sushi/futomaki.jpg",
+    "category": "sushi"
+  },
+  {
+    "id": 9,
+    "title": "Kamburamaki",
+    "subtitle": "Sushi roll with cooked eel, cucumber, and avocado",
+    "price": 12.99,
+    "imageSrc": "../../assets/Sushi/kamburamaki.jpg",
+    "category": "sushi"
+  },
+  {
+    "id": 10,
+    "title": "Temaki",
+    "subtitle": "Hand-rolled sushi cone filled with fish, vegetables, and rice",
+    "price": 12.99,
+    "imageSrc": "../../assets/Sushi/temaki.webp",
+    "category": "sushi"
+  }
+]

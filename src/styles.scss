@@ -1,33 +1,35 @@
-@import './app/app.component.scss';
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
-
+@import "./app/app.component.scss";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
 
 body {
-    margin: 0;
-    padding: 0;
-    width: 380px;
-    background: $background-color;
-    margin: auto;
-    text-align: center;
-  
-    @media (min-width: 768px) {
-      width: 100%;
-      max-width: 1280px;
-    }
+  margin: 0;
+  padding: 0;
+  width: 380px;
+  background: $background-color;
+  margin: auto;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    max-width: 1280px;
   }
+}
 
-
-  // Stylizacja
+// Stylizacja
 * {
   box-sizing: border-box;
 
   p {
     font-family: $body-font;
     font-size: $body-font-size-sm-md;
-  color: $paragraph-color;
+    color: $paragraph-color;
   }
 
-  h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: $title-font;
     font-size: $title-font-size-sm-md;
   }
@@ -37,10 +39,10 @@ body {
     font-size: $span-font-size-sm-md;
     color: $span-color;
   }
-
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
@@ -51,3 +53,19 @@ h1 {
   font-family: $title-font;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffb366;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff9933;
+}

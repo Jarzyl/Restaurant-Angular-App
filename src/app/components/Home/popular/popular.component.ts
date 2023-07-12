@@ -1,17 +1,27 @@
-import { Component } from '@angular/core';
-import { ScrollRevealService } from 'src/app/services/scrollreveal.service';
-import { ShopService } from 'src/app/services/Shop.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ProductTwo } from 'src/app/models/product.model';
+import { ShopService } from 'src/app/services/Shop.service';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-popular',
   templateUrl: './popular.component.html',
-  styleUrls: ['./popular.component.scss']
+  styleUrls: ['./popular.component.scss'],
 })
-export class PopularComponent {
-  // cartService: CartService = new CartService;
+export class PopularComponent implements OnInit, OnDestroy {
+  category = '';
+  products: Array<ProductTwo> | undefined;
+  productsSubscription: Subscription | undefined;
 
-  constructor(public shopService: ShopService) {}
+  onShowCategory(newCategory: string): void {
+    this.category = newCategory;
+    // this.getProducts();
+  }
+  constructor(
+    public shopService: ShopService,
+    private storeService: StoreService
+  ) {}
 
   onAddToCart(product: ProductTwo): void {
     this.shopService.addToCart({
@@ -21,35 +31,22 @@ export class PopularComponent {
       title: product.title,
       subtitle: product.subtitle,
       imageSrc: product.imageSrc,
+      category: product.category,
     });
+    console.log('Product added to cart:', product);
   }
 
-  popularProducts = [
-    {
-      id: 1,
-      title: 'Onigiri',
-      subtitle: 'Japanese Dish',
-      price: 10.99,
-      imageSrc: '../../assets/img/popular-onigiri.png',
-      category: 'sushi'
-    },
-    {
-      id: 2,
-      title: 'Spring Rolls',
-      subtitle: 'Japanese Dish',
-      price: 15.99,
-      imageSrc: '../../assets/img/popular-spring-rols.png',
-      category: 'sushi'
-    },
-    {
-      id: 3,
-      title: 'Sushi Rolls',
-      subtitle: 'Japanese Dish',
-      price: 19.99,
-      imageSrc: '../../assets/img/popular-sushi-rolls.png',
-      category: 'sushi'
-    }
-  ];
+  ngOnInit(): void {
+    this.getProducts();
+  }
+
+  getProducts(): void {
+    this.productsSubscription = this.storeService
+      .getMenuItems()
+      .subscribe((products) => {
+        this.products = products;
+      });
+  }
 
   // constructor(private scrollRevealService: ScrollRevealService) {}
 
@@ -62,4 +59,10 @@ export class PopularComponent {
   //     interval: 100,
   //   });
   // }
+
+  ngOnDestroy(): void {
+    if (this.productsSubscription) {
+      this.productsSubscription.unsubscribe();
+    }
+  }
 }
