@@ -10,14 +10,9 @@ import { StoreService } from 'src/app/services/store.service';
   styleUrls: ['./popular.component.scss'],
 })
 export class PopularComponent implements OnInit, OnDestroy {
-  category = '';
   products: Array<ProductTwo> | undefined;
   productsSubscription: Subscription | undefined;
 
-  onShowCategory(newCategory: string): void {
-    this.category = newCategory;
-    // this.getProducts();
-  }
   constructor(
     public shopService: ShopService,
     private storeService: StoreService
@@ -47,18 +42,6 @@ export class PopularComponent implements OnInit, OnDestroy {
         this.products = products;
       });
   }
-
-  // constructor(private scrollRevealService: ScrollRevealService) {}
-
-  // ngOnInit() {
-  //   this.scrollRevealService.reveal('.card', {
-  //     duration: 2500,
-  //     origin: 'top',
-  //     distance: '60px',
-  //     delay: 400,
-  //     interval: 100,
-  //   });
-  // }
 
   ngOnDestroy(): void {
     if (this.productsSubscription) {

@@ -1,8 +1,9 @@
-<div *ngIf="categories"></div>
-<p>CATEGORIES</p>
+<div *ngIf="categories">
+<span class="category">Categories</span>
 <div class="category-container">
+    <button (click)="onShowCategory('all')">All</button>
   <div *ngFor="let category of categories" class="category-item">
     <button (click)="onShowCategory(category)">{{ category }}</button>
-    <!-- <p>{{ category }}</p> -->
   </div>
+</div>
 </div>

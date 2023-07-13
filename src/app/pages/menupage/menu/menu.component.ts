@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { ProductTwo } from 'src/app/models/product.model';
 import { ShopService } from 'src/app/services/Shop.service';
 import { StoreService } from 'src/app/services/store.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-menu',
@@ -13,10 +14,11 @@ export class MenuComponent implements OnInit, OnDestroy {
   category = '';
   products: Array<ProductTwo> | undefined;
   productsSubscription: Subscription | undefined;
+  allProducts: Array<ProductTwo> | undefined;
 
   onShowCategory(newCategory: string): void {
     this.category = newCategory;
-    // this.getProducts();
+    this.getProducts();
   }
   constructor(
     public shopService: ShopService,
@@ -35,15 +37,37 @@ export class MenuComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit(): void {
-    this.getProducts();
+  getProducts(): void {
+    if (this.category === 'all') {
+      this.productsSubscription = this.storeService
+        .getMenuItems()
+        .subscribe((products) => {
+          this.products = products;
+        });
+    } else {
+      this.productsSubscription = this.storeService
+        .getMenuItems()
+        .pipe(
+          map((products) =>
+            products.filter((product) => product.category === this.category)
+          )
+        )
+        .subscribe((filteredProducts) => {
+          this.products = filteredProducts;
+        });
+    }
   }
 
-  getProducts(): void {
+  ngOnInit(): void {
+    this.getAllProducts();
+  }
+
+  getAllProducts(): void {
     this.productsSubscription = this.storeService
       .getMenuItems()
       .subscribe((products) => {
         this.products = products;
+        this.allProducts = products;
       });
   }
 

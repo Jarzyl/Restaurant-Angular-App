@@ -1,10 +1,11 @@
-@import "../../app.component.scss";
+@import "../../../app.component.scss";
 
 .cart-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 140px;
+  padding-bottom: 200px;
 
   .table-header {
     display: grid;
@@ -15,6 +16,8 @@
     border-bottom: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
+    font-family: $body-font;
+    gap: 30px;
 
     .column {
       text-align: center;
@@ -58,8 +61,7 @@
       justify-content: center;
       text-align: center;
 
-      &.column-total,
-      &.column-actions {
+      &.column-total {
         display: none;
 
         @media (min-width: 768px) {
@@ -72,7 +74,6 @@
       width: 80px;
       height: 80px;
       object-fit: cover;
-      // margin-right: 10px;
       border-radius: 10px;
     }
 
@@ -80,6 +81,10 @@
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 0px;
+
+      @media (min-width: 768px) {
+        margin-bottom: 16px;
+      }
     }
 
     .product-quantity {
@@ -107,10 +112,13 @@
     align-items: center;
     justify-content: flex-end;
     margin-top: 10px;
+    font-family: $body-font;
+    font-size: $span-font-size-sm-md;
 
     .total-label {
       font-weight: bold;
       margin-right: 10px;
+      // font-size: $span-font-size-sm-md;
     }
 
     .total-value {
@@ -140,7 +148,7 @@
     margin-top: 20px;
     cursor: pointer;
     color: white;
-  font-family: $title-font;
+    font-family: $title-font;
 
     a {
       text-decoration: none;
@@ -161,11 +169,22 @@
     margin-top: 20px;
     cursor: pointer;
     color: white;
-  font-family: $title-font;
+    font-family: $title-font;
 
     a {
       text-decoration: none;
       color: white;
     }
+  }
+
+  .material-icons {
+    background: transparent;
+    border: none;
+    color: $span-color;
+    cursor: pointer;
+  }
+
+  .information {
+    font-size: $title-font-size-sm-md;
   }
 }

@@ -22,16 +22,6 @@ export class CartPageComponent implements OnInit {
     });
   }
 
-  displayedColumns: Array<string> = [
-    'imageSrc',
-    'title',
-    'price',
-    'subtitle',
-    'quantity',
-    'total',
-    'action',
-  ];
-
   constructor(public shopService: ShopService) {}
 
   getTotal(items: Array<CartItem>): number {

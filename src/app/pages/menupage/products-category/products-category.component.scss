@@ -1,0 +1,29 @@
+@import "../../../app.component.scss";
+
+.category-container {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  justify-content: center;
+
+  button {
+    background: transparent;
+    border: solid;
+    border-radius: 20px;
+    border-color: $span-color;
+    color: $paragraph-color;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: $title-font;
+    font-size: $body-font-size-lg;
+  }
+}
+
+.category-item {
+  display: flex;
+}
+
+span {
+  font-size: $span-font-size-lg;
+}

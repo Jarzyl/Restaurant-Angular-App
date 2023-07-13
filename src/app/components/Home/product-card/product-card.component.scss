@@ -1,4 +1,4 @@
-@import "../../app.component.scss";
+@import '../../../app.component.scss';
 
 .card {
     display: flex;
@@ -11,7 +11,6 @@
     width: 260px;
     position: relative;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
     height: 350px;
   
     img {
@@ -49,8 +48,8 @@
 
     .cart-icon {
       background: #e68a00;
-      width: 35px;
-      height: 35px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       position: absolute;
       bottom: 18px;
@@ -58,13 +57,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
     }
     
     .material-icons {
+      /* Styl ikony koszyka */
       margin: 0;
-      font-size: 20px;
+      font-size: 23px;
       color: white;
+      cursor: pointer;
     }
   } 
   

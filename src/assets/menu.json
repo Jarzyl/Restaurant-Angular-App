@@ -78,5 +78,53 @@
     "price": 12.99,
     "imageSrc": "../../assets/Sushi/temaki.webp",
     "category": "sushi"
+  },
+  {
+    "id": 11,
+    "title": "Coca Cola",
+    "subtitle": "Original Coca Cola",
+    "price": 12.99,
+    "imageSrc": "../../assets/Drinks/cola.webp",
+    "category": "drinks"
+  },
+  {
+    "id": 12,
+    "title": "Sake",
+    "subtitle": "Sake...",
+    "price": 12.99,
+    "imageSrc": "../../assets/Drinks/sake.jpeg",
+    "category": "drinks"
+  },
+  {
+    "id": 13,
+    "title": "Matcha",
+    "subtitle": "Matcha Tea",
+    "price": 12.99,
+    "imageSrc": "../../assets/Drinks/matcha.webp",
+    "category": "drinks"
+  },
+  {
+    "id": 14,
+    "title": "Mirinda",
+    "subtitle": "Original Mirinda",
+    "price": 12.99,
+    "imageSrc": "../../assets/Drinks/test.png",
+    "category": "drinks"
+  },
+  {
+    "id": 15,
+    "title": "Sprite",
+    "subtitle": "Original Sprite",
+    "price": 12.99,
+    "imageSrc": "../../assets/Drinks/sprite.jfif",
+    "category": "drinks"
+  },
+  {
+    "id": 16,
+    "title": "Mineral Water",
+    "subtitle": "Water",
+    "price": 12.99,
+    "imageSrc": "../../assets/Drinks/water.jpg",
+    "category": "drinks"
   }
 ]

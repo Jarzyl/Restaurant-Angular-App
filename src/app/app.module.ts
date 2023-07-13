@@ -10,13 +10,13 @@ import { NewsletterComponent } from './components/Home/newsletter/newsletter.com
 import { FooterComponent } from './components/Layout/footer/footer.component';
 import { PopularModule } from './components/Home/popular/popular.module';
 import { CartComponent } from './cart/cart.component';
-import { MenuComponent } from './pages/menu/menu.component';
+import { MenuComponent } from './pages/menupage/menu/menu.component';
 import { MainComponent } from './components/Home/main/main.component';
 import { ScrollRevealService } from './services/scrollreveal.service';
-import { ProductsHeaderComponent } from './pages/products-header/products-header.component';
+import { ProductsCategoryComponent } from './pages/menupage/products-category/products-category.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductCartComponent } from './pages/product-cart/product-cart.component';
-import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { ProductCartComponent } from './pages/menupage/product-cart/product-cart.component';
+import { CartPageComponent } from './pages/menupage/cart-page/cart-page.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ShopService } from './services/Shop.service';
 import { StoreService } from './services/store.service';
@@ -34,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     CartComponent,
     MenuComponent,
     MainComponent,
-    ProductsHeaderComponent,
+    ProductsCategoryComponent,
     ProductCartComponent,
     CartPageComponent,
   ],

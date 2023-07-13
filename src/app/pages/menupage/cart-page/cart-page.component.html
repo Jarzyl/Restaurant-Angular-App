@@ -6,7 +6,7 @@
       <div class="column column-price">Price</div>
       <div class="column column-quantity">Quantity</div>
       <div class="column column-total">Total</div>
-      <div class="column column-actions">Actions</div>
+      <div class="column column-actions">Remove</div>
     </div>
     <div class="product" *ngFor="let data of dataSource">
       <div class="column column-product">
@@ -19,16 +19,15 @@
         <p class="product-price">{{ data.price | currency }}</p>
       </div>
       <div class="column column-quantity">
-        <button class="material-icons" (click)="onAddQuantity(data)">add</button>
+        <button class="material-icons" (click)="onAddQuantity(data)" title="AddMore">add</button>
         <p class="product-quantity">{{ data.quantity }}</p>
-        <button class="material-icons" (click)="onRemoveQuantity(data)">remove</button>
+        <button class="material-icons" (click)="onRemoveQuantity(data)" title="AddLess">remove</button>
       </div>
       <div class="column column-total">
         <p class="product-total">{{ data.price * data.quantity | currency }}</p>
       </div>
       <div class="column column-actions">
-        <button class="action-button" (click)="onRemoveFromCart(data)">
-          <span class="material-icons">delete</span>
+        <button class="material-icons" (click)="onRemoveFromCart(data)" title="Remove Product">delete
         </button>
       </div>
     </div>
@@ -47,7 +46,7 @@
   </div>
   <ng-template #emptyCart>
     <div>
-      <p>Your cart is empty.</p>
+      <p class="information">Your cart is empty.</p>
       <button class="menu-button">
         <a routerLink="/menu">Start Shopping</a>
       </button>
