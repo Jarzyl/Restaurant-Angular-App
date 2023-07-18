@@ -21,6 +21,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ShopService } from './services/Shop.service';
 import { StoreService } from './services/store.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductsCategoryComponent,
     ProductCartComponent,
     CartPageComponent,
+    ReservationPageComponent,
+    ContactPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatSnackBarModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [ScrollRevealService, ShopService, StoreService],
   bootstrap: [AppComponent],

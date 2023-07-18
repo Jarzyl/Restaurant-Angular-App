@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProductTwo } from 'src/app/models/product.model';
 import { ShopService } from 'src/app/services/Shop.service';
 import { ScrollRevealService } from 'src/app/services/scrollreveal.service';
@@ -8,7 +8,7 @@ import { ScrollRevealService } from 'src/app/services/scrollreveal.service';
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss'],
 })
-export class ProductCardComponent {
+export class ProductCardComponent implements OnInit {
   @Input() product: ProductTwo | undefined;
   @Output() addToCart = new EventEmitter();
 

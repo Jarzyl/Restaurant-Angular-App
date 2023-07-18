@@ -4,8 +4,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 140px;
+  padding-top: 60px;
   padding-bottom: 200px;
+
+  .title {
+    font-size: $font-size-heading-sm-md;
+    font-family: $title-font;
+  }
 
   .table-header {
     display: grid;

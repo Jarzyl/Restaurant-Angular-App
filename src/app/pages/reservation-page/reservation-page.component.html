@@ -1,0 +1,85 @@
+<div class="reservation-page">
+  <p>Reservation</p>
+  <div class="reservation-form">
+    <p>Table booking form</p>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstName">Name</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="Your name..."
+          required
+          [(ngModel)]="reservation.firstName"
+          [ngClass]="{
+            invalid: isFormInvalid && invalidFields.includes('firstName')
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Your last name ..."
+          required
+          [(ngModel)]="reservation.lastName"
+          [ngClass]="{
+            invalid: isFormInvalid && invalidFields.includes('lastName')
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <label for="reservationDate">Date of booking</label>
+        <input
+          type="date"
+          id="reservationDate"
+          name="reservationDate"
+          required
+          [(ngModel)]="reservation.date"
+          [ngClass]="{
+            invalid: isFormInvalid && invalidFields.includes('date')
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <label for="reservationTime">Reservation time</label>
+        <input
+          type="time"
+          id="reservationTime"
+          name="reservationTime"
+          required
+          [(ngModel)]="reservation.time"
+          [ngClass]="{
+            invalid: isFormInvalid && invalidFields.includes('time')
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <label for="numberOfPeople">Number of people</label>
+        <input
+          type="number"
+          id="numberOfPeople"
+          name="numberOfPeople"
+          min="1"
+          required
+          [(ngModel)]="reservation.numberOfPeople"
+          [ngClass]="{
+            invalid: isFormInvalid && invalidFields.includes('numberOfPeople')
+          }"
+        />
+      </div>
+      <button type="submit">Book a table</button>
+    </form>
+  </div>
+</div>
+
+<div class="confirmation-message" *ngIf="isReservationSubmitted">
+  <p>Reservation submitted!</p>
+</div>
+
+<div *ngIf="isFormInvalid" class="error-message">
+  <p>Please fill in all fields!</p>
+</div>

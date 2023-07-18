@@ -1,6 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { loadStripe } from '@stripe/stripe-js';
 import { Cart, CartItem } from 'src/app/models/cart.model';
 import { ShopService } from 'src/app/services/Shop.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cart-page',
@@ -16,13 +19,12 @@ export class CartPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.shopService.cart.subscribe((_cart) => {
-      console.log('Cart updated:', _cart);
       this.cart = _cart;
       this.dataSource = this.cart.items;
     });
   }
 
-  constructor(public shopService: ShopService) {}
+  constructor(public shopService: ShopService, public http: HttpClient) {}
 
   getTotal(items: Array<CartItem>): number {
     return this.shopService.getTotal(items);
@@ -42,5 +44,18 @@ export class CartPageComponent implements OnInit {
 
   onRemoveQuantity(item: CartItem): void {
     this.shopService.removeQuantity(item);
+  }
+
+  onCheckout(): void {
+    this.http
+      .post('https://sushi-restaurant-angular-app-git-work-halt1x.vercel.app/checkout', {
+        items: this.dataSource,
+      })
+      .subscribe(async (res: any) => {
+        const stripe = await loadStripe(environment.STRIPE_PUBLIC_KEY);
+        stripe?.redirectToCheckout({
+          sessionId: res.id,
+        });
+      });
   }
 }

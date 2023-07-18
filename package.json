@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^16.1.0",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
+    "@stripe/stripe-js": "^1.35.0",
     "material-icons": "^1.13.8",
     "rxjs": "~7.8.0",
     "scrollreveal": "^4.0.9",

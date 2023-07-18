@@ -1,4 +1,5 @@
 <div class="cart-page">
+  <p class="title">Your Cart</p>
   <div *ngIf="cart.items.length; else emptyCart">
     <div class="table-header">
       <div class="column column-product">Product</div>
@@ -19,15 +20,32 @@
         <p class="product-price">{{ data.price | currency }}</p>
       </div>
       <div class="column column-quantity">
-        <button class="material-icons" (click)="onAddQuantity(data)" title="AddMore">add</button>
+        <button
+          class="material-icons"
+          (click)="onAddQuantity(data)"
+          title="AddMore"
+        >
+          add
+        </button>
         <p class="product-quantity">{{ data.quantity }}</p>
-        <button class="material-icons" (click)="onRemoveQuantity(data)" title="AddLess">remove</button>
+        <button
+          class="material-icons"
+          (click)="onRemoveQuantity(data)"
+          title="AddLess"
+        >
+          remove
+        </button>
       </div>
       <div class="column column-total">
         <p class="product-total">{{ data.price * data.quantity | currency }}</p>
       </div>
       <div class="column column-actions">
-        <button class="material-icons" (click)="onRemoveFromCart(data)" title="Remove Product">delete
+        <button
+          class="material-icons"
+          (click)="onRemoveFromCart(data)"
+          title="Remove Product"
+        >
+          delete
         </button>
       </div>
     </div>
@@ -36,12 +54,14 @@
       <div class="column"></div>
       <div class="column"></div>
       <div class="column total-label">Total:</div>
-      <div class="column total-value">{{ getTotal(cart.items) | currency }}</div>
+      <div class="column total-value">
+        {{ getTotal(cart.items) | currency }}
+      </div>
       <div class="column"></div>
     </div>
     <div class="buttons-section">
       <button class="cart-button" (click)="onClearCart()">Clear All</button>
-      <button class="cart-button">Go to Checkout</button>
+      <button class="cart-button" (click)="onCheckout()">Go to Checkout</button>
     </div>
   </div>
   <ng-template #emptyCart>

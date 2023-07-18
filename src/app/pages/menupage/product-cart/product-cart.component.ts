@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProductTwo } from 'src/app/models/product.model';
 import { ShopService } from 'src/app/services/Shop.service';
-import { ScrollRevealService } from 'src/app/services/scrollreveal.service';
 
 @Component({
   selector: 'app-product-cart',
@@ -23,17 +22,5 @@ export class ProductCartComponent {
 
   onAddToCart(): void {
     this.addToCart.emit(this.product);
-  }
-
-  constructor(private scrollRevealService: ScrollRevealService) {}
-
-  ngOnInit() {
-    this.scrollRevealService.reveal('.card', {
-      duration: 2000,
-      origin: 'top',
-      distance: '40px',
-      delay: 200,
-      interval: 400,
-    });
   }
 }

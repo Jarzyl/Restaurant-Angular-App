@@ -1,0 +1,118 @@
+@import "../../app.component.scss";
+
+.reservation-page {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  p {
+    font-size: $font-size-heading-sm-md;
+    font-family: $title-font;
+  }
+}
+
+.reservation-form {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+
+  @media (min-width: 768px) {
+    max-width: 400px;
+  }
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  p {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: $title-font-size-lg;
+    font-family: $span-font;
+    color: $span-color;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    .form-group {
+      margin-bottom: 17px;
+
+      label {
+        font-weight: bold;
+        font-family: $body-font;
+        font-size: $body-font-size-sm-md;
+        padding-left: 2px;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+
+        &.invalid {
+          border-color: red;
+        }
+      }
+    }
+
+    button {
+      background-color: #ff9966;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}
+
+.confirmation-message {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px;
+  width: 250px;
+  height: 50px;
+  background-color: #333333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+
+  p {
+    font-size: 17px;
+    font-family: $title-font;
+    color: rgb(60, 192, 60);
+  }
+}
+
+.error-message {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px;
+  width: 300px;
+  height: 50px;
+  background-color: #333333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+
+  p {
+    font-size: 17px;
+    font-family: $title-font;
+    color: red;
+  }
+}
