@@ -1,6 +1,10 @@
 @import "./app/app.component.scss";
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -15,7 +19,6 @@ body {
   }
 }
 
-// Stylizacja
 * {
   box-sizing: border-box;
 

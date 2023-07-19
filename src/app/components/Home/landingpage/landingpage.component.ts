@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ScrollRevealService } from 'src/app/services/scrollreveal.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { ScrollRevealService } from 'src/app/services/scrollreveal.service';
   templateUrl: './landingpage.component.html',
   styleUrls: ['./landingpage.component.scss'],
 })
-export class LandingpageComponent {
+export class LandingpageComponent implements OnInit {
   constructor(private scrollRevealService: ScrollRevealService) {}
 
   ngOnInit() {
