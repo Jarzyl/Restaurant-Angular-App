@@ -74,15 +74,6 @@ export class LandingpageComponent {
           delay: 400,
         },
       },
-      {
-        selector: '.footer',
-        options: {
-          duration: 2500,
-          origin: 'top',
-          distance: '60px',
-          delay: 400,
-        },
-      },
     ];
 
     elements.forEach((element) => {

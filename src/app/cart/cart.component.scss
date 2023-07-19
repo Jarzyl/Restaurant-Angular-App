@@ -44,6 +44,7 @@
     width: 80px;
     height: 50px;
     border-radius: 10px;
+    object-fit: cover;
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
@@ -81,6 +82,7 @@
     img {
       width: 200px;
       height: 80px;
+      object-fit: cover;
     }
 
     .price {
@@ -92,7 +94,7 @@
     }
 
     .title {
-      font-size: 22px;
+      font-size: 20px;
     }
   }
 }

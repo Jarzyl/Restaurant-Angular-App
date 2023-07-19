@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ShopService {
   cart = new BehaviorSubject<Cart>({ items: [] });
 
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(private _message: MatSnackBar) {}
 
   addToCart(item: CartItem): void {
     const items = [...this.cart.value.items];
@@ -22,7 +22,10 @@ export class ShopService {
     }
 
     this.cart.next({ items });
-    this._snackBar.open('1 item added to cart.', 'Ok', { duration: 3000 });
+    this._message.open('Item added to cart!', '', {
+      duration: 2000,
+      verticalPosition: 'top',
+    });
   }
 
   getTotal(items: Array<CartItem>): number {
@@ -33,8 +36,9 @@ export class ShopService {
 
   clearCart(): void {
     this.cart.next({ items: [] });
-    this._snackBar.open('Cart is cleared.', 'Ok', {
-      duration: 3000,
+    this._message.open('Cart cleared!', '', {
+      duration: 2000,
+      verticalPosition: 'top',
     });
   }
 
@@ -57,8 +61,9 @@ export class ShopService {
     }
 
     this.cart.next({ items: filteredItems });
-    this._snackBar.open('1 item removed from cart.', 'Ok', {
-      duration: 3000,
+    this._message.open('Item removed from cart!', '', {
+      duration: 2000,
+      verticalPosition: 'top',
     });
   }
 
@@ -69,8 +74,9 @@ export class ShopService {
 
     if (update) {
       this.cart.next({ items: filteredItems });
-      this._snackBar.open('1 item removed from cart.', 'Ok', {
-        duration: 3000,
+      this._message.open('Item removed from cart!', '', {
+        duration: 2000,
+        verticalPosition: 'top',
       });
     }
 

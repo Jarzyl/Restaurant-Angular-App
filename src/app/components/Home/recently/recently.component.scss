@@ -3,7 +3,7 @@
 .recently-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  // gap: 20px;
   text-align: center;
   padding-bottom: 80px;
   margin: 0 auto;
@@ -13,7 +13,6 @@
   @media (min-width: 768px) and (max-width: 1024px) {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
     height: 400px;
     max-width: 1000px;
@@ -22,11 +21,27 @@
   @media (min-width: 1024px) {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
     height: 500px;
     max-width: 1260px;
     margin: 0 auto;
+  }
+
+  .container-width {
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      height: 400px;
+      max-width: 1000px;
+    }
+
+    @media (min-width: 1024px) {
+    max-width: 1100px;
+    display: flex;
+    flex-direction: row;
+    }
   }
 
   .text-container-recently {
@@ -35,8 +50,8 @@
       margin-bottom: 20px;
     }
     p {
-      width: 375px;
-      margin: 0;
+      width: 350px;
+      margin: 0 auto;
     }
     img {
       width: 5%;
@@ -87,11 +102,18 @@
     img {
       width: 60%;
       margin-top: 40px;
+      transform: rotate(-20deg);
     }
     @media (min-width: 768px) {
-      width: 600px;
+      width: 300px;
       img {
-        width: 70%;
+        width: 100%;
+      }
+    }
+    @media (min-width: 1024px) {
+      width: 550px;
+      img {
+        width: 80%;
       }
     }
   }
@@ -100,5 +122,34 @@
     bottom: 280px;
     left: -7px;
     opacity: 0.2;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      top: 150px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 130px;
+      left: -7px;
+    }
+  }
+
+  .right-leaf {
+    position: absolute;
+    bottom: 100px;
+    right: -1px;
+    transform: rotate(-25deg);
+    opacity: 0.2;
+    width: 50px;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      top: 100px;
+    }
+
+    @media (min-width: 1024px) {
+      transform: rotate(-25deg);
+      right: 0px;
+      width: 70px;
+      top: 150px;
+    }
   }
 }

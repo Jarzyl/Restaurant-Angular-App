@@ -28,7 +28,6 @@ export class PopularComponent implements OnInit, OnDestroy {
       imageSrc: product.imageSrc,
       category: product.category,
     });
-    console.log('Product added to cart:', product);
   }
 
   ngOnInit(): void {
